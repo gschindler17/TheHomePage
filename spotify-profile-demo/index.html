@@ -4,30 +4,39 @@
         <meta charset="utf-8">
         <title>Garrett's Spotify Profile</title>
         <script src="src/script.js" type="module"></script>
+        <script src="src/weatherscript.js" type="module"></script>
         <link rel="stylesheet" href="src/HomePageStyle.css"/>
     </head>
     <body>
-      <h1>Display your Spotify profile data</h1>
+        <h1>Display your Spotify profile data</h1>
+        <h2>Logged in as <span id="displayName"></span></h2>
+        <span id="avatar"></span>
+        <div id="spotifyBox">
+            <ul id="profileList">
+                <li>User ID: <span id="id"></span></li>
+                <li>Email: <span id="email"></span></li>
+                <li>Spotify URI: <a id="uri" href="#"></a></li>
+                <li>Link: <a id="url" href="#"></a></li>
+                <li>Profile Image: <span id="imgUrl"></span></li>
+            </ul>
 
-      <section id="profile">
-      <h2>Logged in as <span id="displayName"></span></h2>
-      <span id="avatar"></span>
-      <ul id="profileList">
-            <li>User ID: <span id="id"></span></li>
-            <li>Email: <span id="email"></span></li>
-            <li>Spotify URI: <a id="uri" href="#"></a></li>
-            <li>Link: <a id="url" href="#"></a></li>
-            <li>Profile Image: <span id="imgUrl"></span></li>
-      </ul>
-
-      <ul id="topSongs">
-            <li>#1. <span id="song1"></span></li>
-            <li>#2. <span id="song2"></span></li>
-            <li>#3. <span id="song3"></span></li>
-            <li>#4. <span id="song4"></span></li>
-            <li>#5. <span id="song5"></span></li>
-      </ul>
-
-      </section>
+            <p>Top 5 Songs All Time</p>
+            <ol id="topSongs">
+                    <li><span id="song1"></span></li>
+                    <li><span id="song2"></span></li>
+                    <li><span id="song3"></span></li>
+                    <li><span id="song4"></span></li>
+                    <li><span id="song5"></span></li>
+            </ol>
+        </div>
+        <div id="weatherBox">
+            <p>Weather Box</p>
+            <ol id="weatherList">
+                    <li><span id="weather1"></span></li>
+                    <li><span id="weather2"></span></li>
+                    <li><span id="weather3"></span></li>
+            </ol>
+        </div>
+      
     </body>
 </html>
