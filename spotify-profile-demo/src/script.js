@@ -7,8 +7,10 @@ if (!code) {
 } else {
     const accessToken = await getAccessToken(clientId, code);
     const profile = await fetchProfile(accessToken);
+    const topFiveSongs = await fetchTopSong(accessToken);
+    // console.log("TopFiveSongs" + topFiveSongs);
     console.log(profile);
-    populateUI(profile);
+    populateUI(profile, topFiveSongs);
 }
 
 export async function redirectToAuthCodeFlow(clientId) {
@@ -21,7 +23,11 @@ export async function redirectToAuthCodeFlow(clientId) {
     params.append("client_id", clientId);
     params.append("response_type", "code");
     params.append("redirect_uri", "http://localhost:5173/callback");
-    params.append("scope", "user-read-private user-read-email");
+
+    // Necessary to set permissions for different actions
+    params.append("scope", "user-read-private user-read-email user-top-read");
+
+
     params.append("code_challenge_method", "S256");
     params.append("code_challenge", challenge);
 
@@ -68,6 +74,7 @@ export async function getAccessToken(clientId, code) {
     return access_token;
 }
 
+// Fetches the user's profile information
 async function fetchProfile(token) {
     const result = await fetch("https://api.spotify.com/v1/me", {
         method: "GET", headers: { Authorization: `Bearer ${token}` }
@@ -76,7 +83,18 @@ async function fetchProfile(token) {
     return await result.json();
 }
 
-function populateUI(profile) {
+// Fetches the Top 5 Songs All Time
+async function fetchTopSong(token) {
+    const resultsong = await fetch("https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5&offset=0", {
+        method: "GET", headers: { Authorization: `Bearer ${token}` }
+    });
+
+    console.log(resultsong)
+
+    return await resultsong.json();
+}
+
+function populateUI(profile, topFiveSongs) {
     document.getElementById("displayName").innerText = profile.display_name;
     if (profile.images[0]) {
         const profileImage = new Image(200, 200);
@@ -90,4 +108,10 @@ function populateUI(profile) {
     document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
     document.getElementById("url").innerText = profile.href;
     document.getElementById("url").setAttribute("href", profile.href);
+
+    document.getElementById("song1").innerText = topFiveSongs.items[0].name;
+    document.getElementById("song2").innerText = topFiveSongs.items[1].name;
+    document.getElementById("song3").innerText = topFiveSongs.items[2].name;
+    document.getElementById("song4").innerText = topFiveSongs.items[3].name;
+    document.getElementById("song5").innerText = topFiveSongs.items[4].name;
 }

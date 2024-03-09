@@ -1,4 +1,21 @@
 body {
     background-image: url('backgroundIMG.png');
-    color: antiquewhite;
+    color: rgb(255, 255, 255);
+    font-family: fantasy;
+}
+
+#profileList {
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0%);
+}
+
+#topSongs {
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
 }
