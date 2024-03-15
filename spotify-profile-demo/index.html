@@ -12,13 +12,15 @@
         <h2>Logged in as <span id="displayName"></span></h2>
         <span id="avatar"></span>
         <div id="spotifyBox">
-            <ul id="profileList">
-                <li>User ID: <span id="id"></span></li>
-                <li>Email: <span id="email"></span></li>
-                <li>Spotify URI: <a id="uri" href="#"></a></li>
-                <li>Link: <a id="url" href="#"></a></li>
-                <li>Profile Image: <span id="imgUrl"></span></li>
-            </ul>
+            <p>
+                <ul id="profileList">
+                    <li>User ID: <span id="id"></span></li>
+                    <li>Email: <span id="email"></span></li>
+                    <li>Spotify URI: <a id="uri" href="#"></a></li>
+                    <li>Link: <a id="url" href="#"></a></li>
+                    <li>Profile Image: <span id="imgUrl"></span></li>
+                </ul>
+            </p>
 
             <p>Top 5 Songs All Time</p>
             <ol id="topSongs">
@@ -32,11 +34,14 @@
         <div id="weatherBox">
             <p>Weather Box</p>
             <ol id="weatherList">
-                    <li><span id="weather1"></span></li>
-                    <li><span id="weather2"></span></li>
-                    <li><span id="weather3"></span></li>
+                    <li>Current Temperature: <span id="weather1"></span>°</li>
+                    <li>High Temperature Tomorrow: <span id="weather2"></span>°</li>
+                    <li>Low Temperature Tomorrow: <span id="weather3"></span>°</li>
             </ol>
         </div>
-      
+
+        <div id= "GCALdiv">
+            <iframe id = "innerGCAL" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&bgcolor=%23d96464&title=Weekly%20Calendar&showPrint=0&showTabs=0&showNav=0&showTz=0&mode=WEEK&src=Zy1zY2hpbmRsZXJAYmV0aGVsLmVkdQ&src=Y19rdHZzcWh0YzFrM3ZvMzI2OGtraHJiaWN0OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%23E4C441" style="border-width:0" width="500" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
     </body>
 </html>
