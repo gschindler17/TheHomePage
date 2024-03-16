@@ -36,7 +36,7 @@ body {
 #autoWeatherBox {
     position: absolute;
     border-radius: 15px;
-    left: 30%;
+    left: 35%;
     bottom: 5%;
     width: 400px;
     height: 450px;
@@ -85,6 +85,16 @@ body {
 #innerGCAL {
     height: 100%;
     width: 100%;
+}
+
+#Gphotos {
+    position: absolute;
+    border-radius: 15px;
+    left: 30%;
+    top: 5%;
+    width: 30%;
+    height: 35%;
+    overflow: hidden;
 }
 
 

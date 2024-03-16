@@ -20,10 +20,10 @@ function fetchNewWeather(api_key, location) {
         .then(data => {
             console.log(data)
             var dataJSON = data;
-            console.log("dataJSON = " + dataJSON);
-            document.getElementById("weather1").innerText = dataJSON.current.temp_f;
-            document.getElementById("weather2").innerText = dataJSON.forecast.forecastday[0].day.maxtemp_f;
-            document.getElementById("weather3").innerText = dataJSON.forecast.forecastday[0].day.mintemp_f;
+            // console.log("dataJSON = " + dataJSON);
+            // document.getElementById("weather1").innerText = dataJSON.current.temp_f;
+            // document.getElementById("weather2").innerText = dataJSON.forecast.forecastday[0].day.maxtemp_f;
+            // document.getElementById("weather3").innerText = dataJSON.forecast.forecastday[0].day.mintemp_f;
         })
         .catch(error => {
             console.error('Error:', error);
